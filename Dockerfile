@@ -9,7 +9,7 @@ RUN set -ex; \
   corepack prepare pnpm@latest-8 --activate; \
   pnpm -F './packages/*' install --frozen-lockfile --ignore-scripts
 
-ARG RADIOLISE_BUILD_TARGET="fullstack"
+ENV RADIOLISE_BUILD_TARGET=${RADIOLISE_BUILD_TARGET:-"fullstack"}
 ENV RADIOLISE_BACKEND_TYPE="integrated"
 
 RUN set -ex; \
